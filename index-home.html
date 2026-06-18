@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bararaza Clothing Co. | Home</title>
+    <meta
+      name="description"
+      content="Home de Bararaza Clothing Co. Descubre nuevos lanzamientos, mas vendidos y una experiencia de compra moderna y responsive."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Bararaza Clothing Co. | Home" />
+    <meta
+      property="og:description"
+      content="Tienda online de moda premium con nuevos lanzamientos y colecciones destacadas."
+    />
+    <meta property="og:type" content="website" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bararaza Clothing Co.",
+        "url": "https://example.com",
+        "logo": "images/logo_Bararaza.png",
+        "description": "Marca de ropa premium con estilo contemporaneo para uso diario y eventos especiales."
+      }
+    </script>
+  </head>
+  <body class="site-bg text-[var(--c-ink)] antialiased">
+    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index.html" class="shrink-0" aria-label="Ir al inicio">
+          <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
+        </a>
+
+        <form class="hidden flex-1 md:block" role="search" aria-label="Buscar productos">
+          <label for="q" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <input
+              id="q"
+              type="search"
+              placeholder="Buscar camisas, pantalones, accesorios..."
+              class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+            />
+          </div>
+        </form>
+
+        <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
+          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
+          <li><a href="carrito.html" class="nav-pill">Carrito</a></li>
+          <li><a href="checkout.html" class="nav-pill">Cuenta</a></li>
+        </ul>
+      </nav>
+
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" aria-label="Buscar productos en movil">
+        <label for="q-mobile" class="sr-only">Buscar productos</label>
+        <input
+          id="q-mobile"
+          type="search"
+          placeholder="Buscar productos"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+        />
+      </form>
+    </header>
+
+    <main>
+      <section class="hero-wrap relative isolate overflow-hidden">
+        <div class="hero-noise"></div>
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
+          <article class="space-y-6">
+            <p class="inline-flex rounded-full border border-[var(--c-gold)]/40 bg-[var(--c-gold)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[var(--c-gold)]">
+              Campana de temporada
+            </p>
+            <h1 class="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Elegancia francesa con energia urbana
+            </h1>
+            <p class="max-w-xl text-base leading-relaxed text-[var(--c-cloud)] sm:text-lg">
+              Descubre piezas premium pensadas para combinar presencia, comodidad y caracter.
+              Coleccion limitada con enfoque en materiales responsables y siluetas modernas.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="catalogo.html" class="btn-primary">Ver catalogo</a>
+              <a href="producto.html" class="btn-ghost">Producto destacado</a>
+            </div>
+          </article>
+
+          <article class="hero-card rounded-3xl border border-[var(--c-edge)] p-5 shadow-2xl shadow-[var(--c-night)]/30 sm:p-7">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--c-cloud)]">Edicion limitada</p>
+            <h2 class="mt-2 font-display text-3xl">Abrigo Rivage</h2>
+            <p class="mt-2 text-sm text-[var(--c-cloud)]">Corte estructurado, acabado mate y textura premium.</p>
+            <div class="mt-5 grid grid-cols-3 gap-3 text-center text-xs font-semibold">
+              <div class="metric-card"><span>Material</span><strong>Lana 80%</strong></div>
+              <div class="metric-card"><span>Fit</span><strong>Regular</strong></div>
+              <div class="metric-card"><span>Precio</span><strong>EUR 219</strong></div>
+            </div>
+            <a href="producto.html" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[var(--c-gold)] px-4 py-3 text-sm font-bold text-[var(--c-night)] transition hover:brightness-95">
+              Ver producto
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8" aria-labelledby="nuevos-lanzamientos">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <h2 id="nuevos-lanzamientos" class="font-display text-3xl sm:text-4xl">Nuevos lanzamientos</h2>
+          <a href="catalogo.html" class="text-sm font-bold text-[var(--c-indigo)] hover:text-[var(--c-night)]">Ver todos</a>
+        </div>
+        <div class="product-row" role="list" aria-label="Listado horizontal de nuevos lanzamientos">
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-1"></div>
+            <h3>Chaqueta Lumiere</h3>
+            <p>EUR 149</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-2"></div>
+            <h3>Pantalon Seine</h3>
+            <p>EUR 89</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-3"></div>
+            <h3>Camisa Atelier</h3>
+            <p>EUR 75</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-4"></div>
+            <h3>Bolso Cote</h3>
+            <p>EUR 129</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-5"></div>
+            <h3>Zapato Nocturne</h3>
+            <p>EUR 159</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="mas-vendidos">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <h2 id="mas-vendidos" class="font-display text-3xl sm:text-4xl">Mas vendidos</h2>
+          <a href="catalogo.html" class="text-sm font-bold text-[var(--c-indigo)] hover:text-[var(--c-night)]">Ver todos</a>
+        </div>
+        <div class="product-row" role="list" aria-label="Listado horizontal de productos mas vendidos">
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-6"></div>
+            <h3>Blazer Montparnasse</h3>
+            <p>EUR 179</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-7"></div>
+            <h3>Jean Bastille</h3>
+            <p>EUR 95</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-8"></div>
+            <h3>Top Solene</h3>
+            <p>EUR 69</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-9"></div>
+            <h3>Tenis Rive Gauche</h3>
+            <p>EUR 119</p>
+          </article>
+          <article class="product-card" role="listitem">
+            <div class="thumb thumb-10"></div>
+            <h3>Bufanda Minuit</h3>
+            <p>EUR 49</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[var(--c-edge)] bg-[var(--c-night)] text-[var(--c-paper)]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="ft-brand" class="space-y-3">
+          <h2 id="ft-brand" class="font-display text-2xl">Bararaza Clothing Co.</h2>
+          <p class="max-w-xs text-sm text-[var(--c-cloud)]">Moda premium con inspiracion francesa, diseno util y acabados de alto nivel.</p>
+        </section>
+
+        <section aria-labelledby="ft-categorias">
+          <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="catalogo.html" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html" class="footer-link">Accesorios</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-legal">
+          <h2 id="ft-legal" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="#" class="footer-link">Terminos y condiciones</a></li>
+            <li><a href="#" class="footer-link">Politica de privacidad</a></li>
+            <li><a href="#" class="footer-link">Sobre la marca</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-contacto">
+          <h2 id="ft-contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li>Paris, Francia</li>
+            <li><a href="mailto:hola@bararaza.com" class="footer-link">hola@bararaza.com</a></li>
+            <li><a href="tel:+33100000000" class="footer-link">+33 1 00 00 00 00</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="border-t border-[var(--c-edge)] px-4 py-4 text-center text-xs text-[var(--c-cloud)]">
+        2026 Bararaza Clothing Co. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
