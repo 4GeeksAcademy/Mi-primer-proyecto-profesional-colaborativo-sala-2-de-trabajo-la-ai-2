@@ -40,10 +40,12 @@
         </form>
 
         <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
-          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
-          <li><a href="carrito.html" class="nav-pill">Carrito</a></li>
-          <li><a href="checkout.html" class="nav-pill">Cuenta</a></li>
+          <li><a href="catalogo.html" class="nav-pill nav-pill-active" aria-current="page">Catalogo</a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Carrito</span></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
+
+        <p class="header-soft-note" aria-live="polite">Carrito y cuenta proximamente</p>
       </nav>
 
       <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
@@ -96,7 +98,7 @@
               <div class="size-options" id="product-sizes" role="radiogroup" aria-label="Seleccionar talla"></div>
             </fieldset>
 
-            <form id="product-cart-form" action="carrito.html" method="get" class="product-actions">
+            <form id="product-cart-form" action="#" method="get" class="product-actions">
               <div>
                 <label for="cantidad" class="filter-label">Cantidad</label>
                 <div class="quantity-control">
@@ -114,7 +116,7 @@
                   <button type="button" class="quantity-btn" aria-label="Aumentar cantidad" onclick="updateQty(1)">+</button>
                 </div>
               </div>
-              <button type="submit" class="btn-primary px-8 py-3">Anadir al carrito</button>
+              <button type="button" class="btn-primary px-8 py-3" disabled aria-disabled="true" title="Proximamente">Anadir al carrito</button>
             </form>
 
             <p class="product-shipping-note">Envio gratuito en pedidos superiores a 100 EUR</p>
@@ -179,5 +181,6 @@
 
     <script src="./js/productos-data.js"></script>
     <script src="./js/producto.js"></script>
+    <script src="./js/home-search.js"></script>
   </body>
 </html>

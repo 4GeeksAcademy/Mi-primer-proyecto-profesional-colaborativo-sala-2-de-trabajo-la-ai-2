@@ -41,11 +41,12 @@
           <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
         </a>
 
-        <form class="hidden flex-1 md:block" role="search" aria-label="Buscar productos">
+        <form class="hidden flex-1 md:block" role="search" action="catalogo.html" method="get" aria-label="Buscar productos">
           <label for="q" class="sr-only">Buscar productos</label>
           <div class="relative">
             <input
               id="q"
+              name="q"
               type="search"
               placeholder="Buscar camisas, pantalones, accesorios..."
               class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
@@ -55,15 +56,18 @@
 
         <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
           <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
-          <li><a href="carrito.html" class="nav-pill">Carrito</a></li>
-          <li><a href="checkout.html" class="nav-pill">Cuenta</a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Carrito</span></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
+
+        <p class="header-soft-note" aria-live="polite">Carrito y cuenta proximamente</p>
       </nav>
 
-      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" aria-label="Buscar productos en movil">
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
         <label for="q-mobile" class="sr-only">Buscar productos</label>
         <input
           id="q-mobile"
+          name="q"
           type="search"
           placeholder="Buscar productos"
           class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
@@ -207,10 +211,10 @@
         <section aria-labelledby="ft-categorias">
           <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
           <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
-            <li><a href="catalogo.html" class="footer-link">Calzado</a></li>
-            <li><a href="catalogo.html" class="footer-link">Camisas</a></li>
-            <li><a href="catalogo.html" class="footer-link">Pantalones</a></li>
-            <li><a href="catalogo.html" class="footer-link">Accesorios</a></li>
+            <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
           </ul>
         </section>
 
@@ -236,5 +240,7 @@
         2026 Bararaza Clothing Co. Todos los derechos reservados.
       </p>
     </footer>
+    <script src="./js/productos-data.js"></script>
+    <script src="./js/home-search.js"></script>
   </body>
 </html>

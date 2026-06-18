@@ -45,11 +45,12 @@
           <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
         </a>
 
-        <form class="hidden flex-1 md:block" role="search" aria-label="Buscar productos en catalogo">
+        <form class="hidden flex-1 md:block" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en catalogo">
           <label for="q" class="sr-only">Buscar productos</label>
           <div class="relative">
             <input
               id="q"
+              name="q"
               type="search"
               placeholder="Buscar camisas, pantalones, accesorios..."
               class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
@@ -58,16 +59,19 @@
         </form>
 
         <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
-          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
-          <li><a href="carrito.html" class="nav-pill">Carrito</a></li>
-          <li><a href="checkout.html" class="nav-pill">Cuenta</a></li>
+          <li><a href="catalogo.html" class="nav-pill nav-pill-active" aria-current="page">Catalogo</a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Carrito</span></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
+
+        <p class="header-soft-note" aria-live="polite">Carrito y cuenta proximamente</p>
       </nav>
 
-      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" aria-label="Buscar productos en movil">
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
         <label for="q-mobile" class="sr-only">Buscar productos</label>
         <input
           id="q-mobile"
+          name="q"
           type="search"
           placeholder="Buscar productos"
           class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
@@ -93,7 +97,7 @@
 
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="filtros-catalogo">
         <h2 id="filtros-catalogo" class="sr-only">Filtros de catalogo</h2>
-        <form class="catalog-filter-panel" aria-label="Barra de filtros de productos">
+        <form id="catalog-filter-form" class="catalog-filter-panel" aria-label="Barra de filtros de productos">
           <div>
             <label for="categoria" class="filter-label">Categoria</label>
             <select id="categoria" name="categoria" class="filter-select" aria-label="Filtrar por categoria">
@@ -127,17 +131,45 @@
             </select>
           </div>
 
-          <button type="button" class="btn-primary h-[46px] self-end">Aplicar filtros</button>
+          <div>
+            <label class="filter-label">Precio (EUR)</label>
+            <div class="price-range-grid" aria-label="Filtrar por rango de precio">
+              <input
+                id="precio-min"
+                name="precio-min"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                class="filter-input"
+                placeholder="Min"
+                aria-label="Precio minimo"
+              />
+              <input
+                id="precio-max"
+                name="precio-max"
+                type="number"
+                min="0"
+                step="1"
+                inputmode="numeric"
+                class="filter-input"
+                placeholder="Max"
+                aria-label="Precio maximo"
+              />
+            </div>
+          </div>
+
+          <button id="apply-filters" type="button" class="btn-primary h-[46px] self-end">Aplicar filtros</button>
         </form>
       </section>
 
       <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="listado-catalogo">
         <div class="mb-6 flex items-end justify-between gap-4">
           <h2 id="listado-catalogo" class="font-display text-3xl sm:text-4xl">Productos disponibles</h2>
-          <p class="text-sm font-semibold text-[var(--c-indigo)]">20 resultados</p>
+          <p id="result-count" class="text-sm font-semibold text-[var(--c-indigo)]">20 resultados</p>
         </div>
 
-        <div class="catalog-grid" role="list" aria-label="Listado de productos en rejilla 4 por 5">
+        <div id="catalog-grid" class="catalog-grid" role="list" aria-label="Listado de productos en rejilla 4 por 5">
           <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
             <a href="producto.html?id=camisa-atelier-blanche" class="catalog-link">
               <div class="catalog-thumb thumb thumb-1"></div>
@@ -302,6 +334,10 @@
             </a>
           </article>
         </div>
+
+        <p id="empty-state" class="catalog-empty-state" hidden>
+          No encontramos productos con esos filtros. Prueba otra busqueda o borra algun filtro.
+        </p>
       </section>
     </main>
 
@@ -315,10 +351,10 @@
         <section aria-labelledby="ft-categorias">
           <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
           <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
-            <li><a href="catalogo.html" class="footer-link">Calzado</a></li>
-            <li><a href="catalogo.html" class="footer-link">Camisas</a></li>
-            <li><a href="catalogo.html" class="footer-link">Pantalones</a></li>
-            <li><a href="catalogo.html" class="footer-link">Accesorios</a></li>
+            <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
           </ul>
         </section>
 
@@ -344,5 +380,7 @@
         2026 Bararaza Clothing Co. Todos los derechos reservados.
       </p>
     </footer>
+    <script src="./js/productos-data.js"></script>
+    <script src="./js/catalogo.js"></script>
   </body>
 </html>
