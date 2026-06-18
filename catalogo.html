@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bararaza Clothing Co. | Catalogo</title>
+    <meta
+      name="description"
+      content="Catalogo de Bararaza Clothing Co. Filtra por categoria y talla para descubrir prendas premium de estilo contemporaneo."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Bararaza Clothing Co. | Catalogo" />
+    <meta
+      property="og:description"
+      content="Explora el catalogo completo de ropa y accesorios de Bararaza Clothing Co."
+    />
+    <meta property="og:type" content="website" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles-home.css?v=20260618" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Catalogo Bararaza Clothing Co.",
+        "url": "catalogo.html",
+        "about": "Moda premium para hombre y mujer",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bararaza Clothing Co.",
+          "logo": "images/logo_Bararaza.png"
+        }
+      }
+    </script>
+  </head>
+  <body class="site-bg text-[var(--c-ink)] antialiased">
+    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index-home.html" class="shrink-0" aria-label="Ir al inicio">
+          <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
+        </a>
+
+        <form class="hidden flex-1 md:block" role="search" aria-label="Buscar productos en catalogo">
+          <label for="q" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <input
+              id="q"
+              type="search"
+              placeholder="Buscar camisas, pantalones, accesorios..."
+              class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+            />
+          </div>
+        </form>
+
+        <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
+          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
+          <li><a href="carrito.html" class="nav-pill">Carrito</a></li>
+          <li><a href="checkout.html" class="nav-pill">Cuenta</a></li>
+        </ul>
+      </nav>
+
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" aria-label="Buscar productos en movil">
+        <label for="q-mobile" class="sr-only">Buscar productos</label>
+        <input
+          id="q-mobile"
+          type="search"
+          placeholder="Buscar productos"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+        />
+      </form>
+    </header>
+
+    <main>
+      <section class="hero-wrap relative isolate overflow-hidden">
+        <div class="hero-noise"></div>
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+          <p class="inline-flex rounded-full border border-[var(--c-gold)]/40 bg-[var(--c-gold)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[var(--c-gold)]">
+            Catalogo oficial
+          </p>
+          <h1 class="mt-4 font-display text-4xl leading-tight text-[var(--c-paper)] sm:text-5xl">
+            Encuentra la pieza perfecta para tu estilo
+          </h1>
+          <p class="mt-3 max-w-3xl text-base text-[var(--c-cloud)] sm:text-lg">
+            Explora toda la coleccion de Bararaza Clothing Co. Filtra por categoria y talla para navegar de forma rapida entre prendas premium.
+          </p>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="filtros-catalogo">
+        <h2 id="filtros-catalogo" class="sr-only">Filtros de catalogo</h2>
+        <form class="catalog-filter-panel" aria-label="Barra de filtros de productos">
+          <div>
+            <label for="categoria" class="filter-label">Categoria</label>
+            <select id="categoria" name="categoria" class="filter-select" aria-label="Filtrar por categoria">
+              <option value="">Todas</option>
+              <option value="calzado">Calzado</option>
+              <option value="camisas">Camisas</option>
+              <option value="pantalones">Pantalones</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="talla" class="filter-label">Talla</label>
+            <select id="talla" name="talla" class="filter-select" aria-label="Filtrar por talla">
+              <option value="">Todas</option>
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="orden" class="filter-label">Ordenar</label>
+            <select id="orden" name="orden" class="filter-select" aria-label="Ordenar productos">
+              <option value="destacados">Destacados</option>
+              <option value="precio-asc">Precio menor a mayor</option>
+              <option value="precio-desc">Precio mayor a menor</option>
+              <option value="novedades">Novedades</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn-primary h-[46px] self-end">Aplicar filtros</button>
+        </form>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="listado-catalogo">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <h2 id="listado-catalogo" class="font-display text-3xl sm:text-4xl">Productos disponibles</h2>
+          <p class="text-sm font-semibold text-[var(--c-indigo)]">20 resultados</p>
+        </div>
+
+        <div class="catalog-grid" role="list" aria-label="Listado de productos en rejilla 4 por 5">
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Camisa Atelier Blanche</h3>
+              <p class="catalog-meta">Camisas | Talla S-M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="82">82</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Pantalon Seine Tapered</h3>
+              <p class="catalog-meta">Pantalones | Talla M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="96">96</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Zapato Nocturne Cuir</h3>
+              <p class="catalog-meta">Calzado | Talla 39-44</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="145">145</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Bolso Arc Nuit</h3>
+              <p class="catalog-meta">Accesorios | Unica</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="119">119</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Chaqueta Rivage</h3>
+              <p class="catalog-meta">Camisas | Talla M-L-XL</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="158">158</span></p>
+            </a>
+          </article>
+
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Jean Bastille Slim</h3>
+              <p class="catalog-meta">Pantalones | Talla S-M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="89">89</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Top Solene Satin</h3>
+              <p class="catalog-meta">Camisas | Talla XS-S-M</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="67">67</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Tenis Rive Gauche</h3>
+              <p class="catalog-meta">Calzado | Talla 38-43</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="112">112</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Bufanda Minuit Merino</h3>
+              <p class="catalog-meta">Accesorios | Unica</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="49">49</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Camisa Provence Linen</h3>
+              <p class="catalog-meta">Camisas | Talla S-M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="79">79</span></p>
+            </a>
+          </article>
+
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Pantalon Cote Cargo</h3>
+              <p class="catalog-meta">Pantalones | Talla M-L-XL</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="101">101</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Oxford Parisian Step</h3>
+              <p class="catalog-meta">Calzado | Talla 40-45</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="164">164</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Cinturon Atelier Grain</h3>
+              <p class="catalog-meta">Accesorios | Talla S-M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="56">56</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Blazer Montparnasse</h3>
+              <p class="catalog-meta">Camisas | Talla M-L-XL</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="176">176</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Jogger Urbain Flex</h3>
+              <p class="catalog-meta">Pantalones | Talla XS-S-M</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="73">73</span></p>
+            </a>
+          </article>
+
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Sneaker Lumiere Knit</h3>
+              <p class="catalog-meta">Calzado | Talla 37-42</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="121">121</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Bolso Cote Mini</h3>
+              <p class="catalog-meta">Accesorios | Unica</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="99">99</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Camisa Classique Oxford</h3>
+              <p class="catalog-meta">Camisas | Talla S-M-L-XL</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="88">88</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Pantalon Dock Beige</h3>
+              <p class="catalog-meta">Pantalones | Talla M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="94">94</span></p>
+            </a>
+          </article>
+          <article class="catalog-card" role="listitem" itemscope itemtype="https://schema.org/Product">
+            <a href="3-Vista de producto-melioubi/producto.html" class="catalog-link">
+              <div class="catalog-thumb"></div>
+              <h3 itemprop="name">Sombrero Atelier Felt</h3>
+              <p class="catalog-meta">Accesorios | Talla M-L</p>
+              <p class="catalog-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="62">62</span></p>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[var(--c-edge)] bg-[var(--c-night)] text-[var(--c-paper)]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="ft-brand" class="space-y-3">
+          <h2 id="ft-brand" class="font-display text-2xl">Bararaza Clothing Co.</h2>
+          <p class="max-w-xs text-sm text-[var(--c-cloud)]">Moda premium con inspiracion francesa, diseno util y acabados de alto nivel.</p>
+        </section>
+
+        <section aria-labelledby="ft-categorias">
+          <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="catalogo.html" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html" class="footer-link">Accesorios</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-legal">
+          <h2 id="ft-legal" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="#" class="footer-link">Terminos y condiciones</a></li>
+            <li><a href="#" class="footer-link">Politica de privacidad</a></li>
+            <li><a href="#" class="footer-link">Sobre la marca</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-contacto">
+          <h2 id="ft-contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li>Paris, Francia</li>
+            <li><a href="mailto:hola@bararaza.com" class="footer-link">hola@bararaza.com</a></li>
+            <li><a href="tel:+33100000000" class="footer-link">+33 1 00 00 00 00</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="border-t border-[var(--c-edge)] px-4 py-4 text-center text-xs text-[var(--c-cloud)]">
+        2026 Bararaza Clothing Co. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
