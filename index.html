@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bararaza | Carrito</title>
+    <meta
+      name="description"
+      content="Prototipo de carrito de compras para Bararaza. Vista completa con productos, cantidades, impuestos y total para checkout."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-wrap" aria-label="Marca Bararaza">
+        <p class="brand-kicker">France since 1986</p>
+        <h1 class="brand-name">Bararaza</h1>
+      </div>
+
+      <nav aria-label="Vistas principales">
+        <ul class="main-nav">
+          <li><a href="#" aria-label="Ir a Home">Home</a></li>
+          <li><a href="#" aria-label="Ir a Catalogo">Catalogo</a></li>
+          <li><a href="#" aria-label="Ir a Vista de producto">Producto</a></li>
+          <li><a class="active" href="#" aria-current="page">Carrito</a></li>
+          <li><a href="#" aria-label="Ir a Checkout">Checkout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cart-layout" aria-labelledby="cart-title">
+        <div class="cart-block">
+          <h2 id="cart-title">Tu carrito</h2>
+          <p class="cart-intro">
+            Revisa tus prendas seleccionadas antes de continuar al checkout.
+          </p>
+
+          <ul class="cart-list" aria-label="Lista de productos en el carrito">
+            <li class="cart-item" data-product-price="145.00">
+              <div class="thumb thumb-1" role="img" aria-label="Miniatura trench coat"></div>
+              <div class="item-main">
+                <h3>Trench Coat Paris</h3>
+                <p class="item-meta">Beige sable | Talla M</p>
+                <p class="unit-price">
+                  Precio unitario: <span class="js-unit-price">$145.00</span>
+                </p>
+              </div>
+
+              <div class="qty-control" aria-label="Control de cantidad del producto 1">
+                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
+                <input class="qty-input js-qty" type="number" min="1" value="1" aria-label="Cantidad producto 1" />
+                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+
+              <p class="line-total">Total: <span class="js-line-total">$145.00</span></p>
+            </li>
+
+            <li class="cart-item" data-product-price="89.00">
+              <div class="thumb thumb-2" role="img" aria-label="Miniatura camisa premium"></div>
+              <div class="item-main">
+                <h3>Chemise Lumiere</h3>
+                <p class="item-meta">Navy eclipse | Talla L</p>
+                <p class="unit-price">
+                  Precio unitario: <span class="js-unit-price">$89.00</span>
+                </p>
+              </div>
+
+              <div class="qty-control" aria-label="Control de cantidad del producto 2">
+                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
+                <input class="qty-input js-qty" type="number" min="1" value="2" aria-label="Cantidad producto 2" />
+                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+
+              <p class="line-total">Total: <span class="js-line-total">$178.00</span></p>
+            </li>
+
+            <li class="cart-item" data-product-price="59.00">
+              <div class="thumb thumb-3" role="img" aria-label="Miniatura pantalon urbano"></div>
+              <div class="item-main">
+                <h3>Pantalon Rivage</h3>
+                <p class="item-meta">Slate urban | Talla 40</p>
+                <p class="unit-price">
+                  Precio unitario: <span class="js-unit-price">$59.00</span>
+                </p>
+              </div>
+
+              <div class="qty-control" aria-label="Control de cantidad del producto 3">
+                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
+                <input class="qty-input js-qty" type="number" min="1" value="1" aria-label="Cantidad producto 3" />
+                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
+              </div>
+
+              <p class="line-total">Total: <span class="js-line-total">$59.00</span></p>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="summary-card" aria-label="Resumen del pedido">
+          <h2>Resumen</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotal-value">$382.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Impuestos (19%)</span>
+            <strong id="tax-value">$72.58</strong>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <strong id="total-value">$454.58</strong>
+          </div>
+          <button class="buy-btn" type="button" aria-label="Continuar a compra">
+            Comprar
+          </button>
+          <p class="summary-note">Envio gratis en pedidos superiores a $200.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bararaza | Prototipo visual de carrito para tienda online</p>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>
