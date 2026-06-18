@@ -226,6 +226,119 @@ body {
   color: var(--c-gold);
 }
 
+.catalog-filter-panel {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 30%, white 70%);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--c-paper) 86%, white 14%);
+  padding: 1rem;
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-indigo);
+}
+
+.filter-select {
+  width: 100%;
+  height: 46px;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 40%, white 60%);
+  border-radius: 0.75rem;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  padding: 0 0.8rem;
+  font-size: 0.94rem;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--c-gold);
+}
+
+.catalog-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.catalog-card {
+  border: 1px solid color-mix(in oklab, var(--c-steel) 35%, white 65%);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--c-paper) 80%, white 20%);
+  overflow: hidden;
+  min-height: 308px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 25px -18px color-mix(in oklab, var(--c-night) 65%, transparent);
+}
+
+.catalog-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.8rem;
+}
+
+.catalog-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.78rem;
+  border: 1px solid color-mix(in oklab, var(--c-paper) 30%, transparent);
+  background: linear-gradient(150deg, #090116 0%, #34345f 45%, #dccb8a 100%);
+}
+
+.catalog-card h3 {
+  margin: 0.75rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.34rem;
+  line-height: 1.15;
+}
+
+.catalog-meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--c-steel);
+  font-weight: 600;
+}
+
+.catalog-price {
+  margin: 0.45rem 0 0;
+  font-size: 0.94rem;
+  color: var(--c-indigo);
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .catalog-filter-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-filter-panel {
+    grid-template-columns: 1.1fr 1.1fr 1.1fr auto;
+    align-items: end;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-wrap article,
   .product-card,
