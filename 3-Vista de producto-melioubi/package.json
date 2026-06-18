@@ -1,0 +1,12 @@
+{
+  "name": "bararaza-store",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./css/input.css -o ./css/tailwind.css --watch",
+    "build:css:standalone": ".\\tailwindcss.exe -i .\\css\\input.css -o .\\css\\tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
