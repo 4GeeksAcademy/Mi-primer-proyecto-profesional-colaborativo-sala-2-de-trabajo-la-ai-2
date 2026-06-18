@@ -22,14 +22,21 @@ def serve_dir_directory_index():
         return stdout if out.returncode == 0 else f"<pre style='color: red;'>{stdout.decode('utf-8')}</pre>"
     if os.path.exists("index.html"):
         return send_from_directory(static_file_dir, 'index.html')
+    if os.path.exists("index-home.html"):
+        return send_from_directory(static_file_dir, 'index-home.html')
     else:
-        return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
+        return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html or index-home.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
 
 # Serving any other image
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
     if not os.path.isfile(os.path.join(static_file_dir, path)):
-        path = os.path.join(path, 'index.html')
+        html_path = os.path.join(path, 'index.html')
+        home_path = os.path.join(path, 'index-home.html')
+        if os.path.isfile(os.path.join(static_file_dir, html_path)):
+            path = html_path
+        else:
+            path = home_path
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
