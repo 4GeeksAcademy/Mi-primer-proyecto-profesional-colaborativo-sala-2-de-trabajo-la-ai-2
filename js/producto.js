@@ -69,7 +69,7 @@
 
   var cartForm = document.getElementById("product-cart-form");
   if (cartForm) {
-    cartForm.action = "carrito.html";
+    cartForm.action = "#";
   }
 
   var schema = {
