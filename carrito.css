@@ -135,13 +135,26 @@ main {
 
 .cart-item {
   display: grid;
-  grid-template-columns: 84px 1fr auto auto;
+  grid-template-columns: 84px 1fr auto auto auto;
   gap: 0.85rem;
   align-items: center;
   background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(246, 240, 223, 0.8));
   border: 1px solid rgba(181, 171, 141, 0.45);
   border-radius: var(--radius-md);
   padding: 0.8rem;
+}
+
+.cart-empty {
+  border: 1px dashed rgba(52, 51, 94, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  color: #4c4565;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.cart-empty a {
+  color: var(--indigo);
+  font-weight: 700;
 }
 
 .thumb {
@@ -229,6 +242,20 @@ main {
   font-weight: 700;
 }
 
+.remove-btn {
+  border: 1px solid rgba(52, 51, 94, 0.25);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  background: #fff;
+  color: var(--indigo);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #f5efe1;
+}
+
 .summary-card {
   position: sticky;
   top: 1rem;
@@ -255,6 +282,9 @@ main {
 }
 
 .buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top: 1.35rem;
   border: none;
@@ -266,12 +296,20 @@ main {
   padding: 0.85rem;
   letter-spacing: 0.01rem;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .buy-btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.08);
+}
+
+.buy-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  filter: none;
 }
 
 .summary-note {
@@ -329,5 +367,9 @@ main {
   .line-total {
     grid-area: total;
     text-align: left;
+  }
+
+  .remove-btn {
+    justify-self: start;
   }
 }

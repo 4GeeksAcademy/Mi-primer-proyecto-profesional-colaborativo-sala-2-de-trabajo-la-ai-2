@@ -3,36 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bararaza | Carrito</title>
+    <title>Bararaza Clothing Co. | Carrito</title>
     <meta
       name="description"
       content="Prototipo de carrito de compras para Bararaza. Vista completa con productos, cantidades, impuestos y total para checkout."
     />
     <meta name="robots" content="index, follow" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Prata&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles-home.css?v=20260618" />
+    <link rel="stylesheet" href="carrito.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="brand-wrap" aria-label="Marca Bararaza">
-        <p class="brand-kicker">France since 1986</p>
-        <h1 class="brand-name">Bararaza</h1>
-      </div>
+  <body class="site-bg text-[var(--c-ink)] antialiased">
+    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index-home.html" class="shrink-0" aria-label="Ir al inicio">
+          <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
+        </a>
 
-      <nav aria-label="Vistas principales">
-        <ul class="main-nav">
-          <li><a href="#" aria-label="Ir a Home">Home</a></li>
-          <li><a href="#" aria-label="Ir a Catalogo">Catalogo</a></li>
-          <li><a href="#" aria-label="Ir a Vista de producto">Producto</a></li>
-          <li><a class="active" href="#" aria-current="page">Carrito</a></li>
-          <li><a href="#" aria-label="Ir a Checkout">Checkout</a></li>
+        <form class="hidden flex-1 md:block" role="search" action="catalogo.html" method="get" aria-label="Buscar productos">
+          <label for="q" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <input
+              id="q"
+              name="q"
+              type="search"
+              placeholder="Buscar camisas, pantalones, accesorios..."
+              class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+            />
+          </div>
+        </form>
+
+        <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
+          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
+          <li><a href="carrito.html" class="nav-pill nav-pill-active nav-pill-cart" aria-current="page">Carrito <span class="cart-count-badge js-cart-count" hidden>0</span></a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Checkout</span></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
+
+        <p class="header-soft-note" aria-live="polite">Cuenta y checkout proximamente</p>
       </nav>
+
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
+        <label for="q-mobile" class="sr-only">Buscar productos</label>
+        <input
+          id="q-mobile"
+          name="q"
+          type="search"
+          placeholder="Buscar productos"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+        />
+      </form>
     </header>
 
     <main>
@@ -40,67 +66,10 @@
         <div class="cart-block">
           <h2 id="cart-title">Tu carrito</h2>
           <p class="cart-intro">
-            Revisa tus prendas seleccionadas antes de continuar al checkout.
+            Revisa tus prendas seleccionadas antes de continuar con tu compra.
           </p>
 
-          <ul class="cart-list" aria-label="Lista de productos en el carrito">
-            <li class="cart-item" data-product-price="145.00">
-              <div class="thumb thumb-1" role="img" aria-label="Miniatura trench coat"></div>
-              <div class="item-main">
-                <h3>Trench Coat Paris</h3>
-                <p class="item-meta">Beige sable | Talla M</p>
-                <p class="unit-price">
-                  Precio unitario: <span class="js-unit-price">$145.00</span>
-                </p>
-              </div>
-
-              <div class="qty-control" aria-label="Control de cantidad del producto 1">
-                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
-                <input class="qty-input js-qty" type="number" min="1" value="1" aria-label="Cantidad producto 1" />
-                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
-              </div>
-
-              <p class="line-total">Total: <span class="js-line-total">$145.00</span></p>
-            </li>
-
-            <li class="cart-item" data-product-price="89.00">
-              <div class="thumb thumb-2" role="img" aria-label="Miniatura camisa premium"></div>
-              <div class="item-main">
-                <h3>Chemise Lumiere</h3>
-                <p class="item-meta">Navy eclipse | Talla L</p>
-                <p class="unit-price">
-                  Precio unitario: <span class="js-unit-price">$89.00</span>
-                </p>
-              </div>
-
-              <div class="qty-control" aria-label="Control de cantidad del producto 2">
-                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
-                <input class="qty-input js-qty" type="number" min="1" value="2" aria-label="Cantidad producto 2" />
-                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
-              </div>
-
-              <p class="line-total">Total: <span class="js-line-total">$178.00</span></p>
-            </li>
-
-            <li class="cart-item" data-product-price="59.00">
-              <div class="thumb thumb-3" role="img" aria-label="Miniatura pantalon urbano"></div>
-              <div class="item-main">
-                <h3>Pantalon Rivage</h3>
-                <p class="item-meta">Slate urban | Talla 40</p>
-                <p class="unit-price">
-                  Precio unitario: <span class="js-unit-price">$59.00</span>
-                </p>
-              </div>
-
-              <div class="qty-control" aria-label="Control de cantidad del producto 3">
-                <button class="qty-btn js-minus" type="button" aria-label="Disminuir cantidad">-</button>
-                <input class="qty-input js-qty" type="number" min="1" value="1" aria-label="Cantidad producto 3" />
-                <button class="qty-btn js-plus" type="button" aria-label="Aumentar cantidad">+</button>
-              </div>
-
-              <p class="line-total">Total: <span class="js-line-total">$59.00</span></p>
-            </li>
-          </ul>
+          <ul id="cart-list" class="cart-list" aria-label="Lista de productos en el carrito"></ul>
         </div>
 
         <aside class="summary-card" aria-label="Resumen del pedido">
@@ -117,18 +86,54 @@
             <span>Total</span>
             <strong id="total-value">$454.58</strong>
           </div>
-          <button class="buy-btn" type="button" aria-label="Continuar a compra">
-            Comprar
-          </button>
+          <button class="buy-btn" type="button" disabled aria-disabled="true" title="Checkout proximamente">Comprar</button>
           <p class="summary-note">Envio gratis en pedidos superiores a $200.</p>
         </aside>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>Bararaza | Prototipo visual de carrito para tienda online</p>
+    <footer class="border-t border-[var(--c-edge)] bg-[var(--c-night)] text-[var(--c-paper)]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="ft-brand" class="space-y-3">
+          <h2 id="ft-brand" class="font-display text-2xl">Bararaza Clothing Co.</h2>
+          <p class="max-w-xs text-sm text-[var(--c-cloud)]">Moda premium con inspiracion francesa, diseno util y acabados de alto nivel.</p>
+        </section>
+
+        <section aria-labelledby="ft-categorias">
+          <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-legal">
+          <h2 id="ft-legal" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="#" class="footer-link">Terminos y condiciones</a></li>
+            <li><a href="#" class="footer-link">Politica de privacidad</a></li>
+            <li><a href="#" class="footer-link">Sobre la marca</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-contacto">
+          <h2 id="ft-contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li>Paris, Francia</li>
+            <li><a href="mailto:hola@bararaza.com" class="footer-link">hola@bararaza.com</a></li>
+            <li><a href="tel:+33100000000" class="footer-link">+33 1 00 00 00 00</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="border-t border-[var(--c-edge)] px-4 py-4 text-center text-xs text-[var(--c-cloud)]">
+        2026 Bararaza Clothing Co. Todos los derechos reservados.
+      </p>
     </footer>
 
+    <script src="./js/productos-data.js"></script>
     <script src="cart.js"></script>
+    <script src="./js/cart-badge.js"></script>
   </body>
 </html>

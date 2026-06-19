@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto | Bararaza Clothing Co.</title>
+    <meta
+      name="description"
+      content="Detalle de producto Bararaza Clothing Co. Prendas premium con acabados de alto nivel y envio a toda Europa."
+    />
+    <meta name="robots" content="index, follow" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles-home.css?v=20260618" />
+    <script type="application/ld+json" id="product-schema"></script>
+  </head>
+  <body class="site-bg text-[var(--c-ink)] antialiased">
+    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index-home.html" class="shrink-0" aria-label="Ir al inicio">
+          <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
+        </a>
+
+        <form class="hidden flex-1 md:block" role="search" action="catalogo.html" method="get" aria-label="Buscar productos">
+          <label for="q" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <input
+              id="q"
+              name="q"
+              type="search"
+              placeholder="Buscar camisas, pantalones, accesorios..."
+              class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+            />
+          </div>
+        </form>
+
+        <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
+          <li><a href="catalogo.html" class="nav-pill nav-pill-active" aria-current="page">Catalogo</a></li>
+          <li><a href="carrito.html" class="nav-pill nav-pill-cart">Carrito <span class="cart-count-badge js-cart-count" hidden>0</span></a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Checkout</span></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
+        </ul>
+
+        <p class="header-soft-note" aria-live="polite">Cuenta y checkout proximamente</p>
+      </nav>
+
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
+        <label for="q-mobile" class="sr-only">Buscar productos</label>
+        <input
+          id="q-mobile"
+          name="q"
+          type="search"
+          placeholder="Buscar productos"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+        />
+      </form>
+    </header>
+
+    <main>
+      <nav aria-label="Ruta de navegacion" class="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+        <ol class="product-breadcrumb">
+          <li><a href="index-home.html">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="catalogo.html">Catalogo</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a id="breadcrumb-category-link" href="catalogo.html"><span id="breadcrumb-category">Camisas</span></a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" id="breadcrumb-product">Producto</li>
+        </ol>
+      </nav>
+
+      <article itemscope itemtype="https://schema.org/Product" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+        <div class="product-detail-grid">
+          <section aria-label="Imagen del producto" class="product-detail-media" id="product-media"></section>
+
+          <section aria-label="Informacion del producto">
+            <p class="product-badge" id="product-badge">Nueva coleccion</p>
+            <h1 class="product-detail-title" itemprop="name" id="product-name">Producto Bararaza</h1>
+
+            <dl class="product-meta-grid">
+              <dt>Codigo</dt>
+              <dd itemprop="sku" id="product-sku">BRZ-000</dd>
+              <dt>Precio</dt>
+              <dd>
+                <data id="product-price-data" value="0" itemprop="price" content="0" class="product-price-value">
+                  <span id="product-price">0,00 EUR</span>
+                </data>
+                <meta itemprop="priceCurrency" content="EUR" />
+              </dd>
+            </dl>
+
+            <fieldset class="size-fieldset">
+              <legend>Talla</legend>
+              <div class="size-options" id="product-sizes" role="radiogroup" aria-label="Seleccionar talla"></div>
+            </fieldset>
+
+            <form id="product-cart-form" action="carrito.html" method="get" class="product-actions">
+              <div>
+                <label for="cantidad" class="filter-label">Cantidad</label>
+                <div class="quantity-control">
+                  <button type="button" class="quantity-btn" aria-label="Disminuir cantidad" onclick="updateQty(-1)">-</button>
+                  <input
+                    type="number"
+                    id="cantidad"
+                    name="cantidad"
+                    value="1"
+                    min="1"
+                    max="10"
+                    class="quantity-input"
+                    aria-label="Cantidad de productos"
+                  />
+                  <button type="button" class="quantity-btn" aria-label="Aumentar cantidad" onclick="updateQty(1)">+</button>
+                </div>
+              </div>
+              <button type="submit" class="btn-primary px-8 py-3">Anadir al carrito</button>
+            </form>
+
+            <p class="product-shipping-note">Envio gratuito en pedidos superiores a 100 EUR</p>
+          </section>
+        </div>
+
+        <section aria-labelledby="descripcion-titulo" class="product-desc-section">
+          <h2 id="descripcion-titulo">Descripcion del producto</h2>
+          <div class="product-desc-grid">
+            <article>
+              <h3>Materiales</h3>
+              <p itemprop="material" id="product-materials"></p>
+            </article>
+            <article>
+              <h3>Uso recomendado</h3>
+              <p itemprop="description" id="product-description"></p>
+            </article>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="border-t border-[var(--c-edge)] bg-[var(--c-night)] text-[var(--c-paper)]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="ft-brand" class="space-y-3">
+          <h2 id="ft-brand" class="font-display text-2xl">Bararaza Clothing Co.</h2>
+          <p class="max-w-xs text-sm text-[var(--c-cloud)]">Moda premium con inspiracion francesa, diseno util y acabados de alto nivel.</p>
+        </section>
+
+        <section aria-labelledby="ft-categorias">
+          <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-legal">
+          <h2 id="ft-legal" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="#" class="footer-link">Terminos y condiciones</a></li>
+            <li><a href="#" class="footer-link">Politica de privacidad</a></li>
+            <li><a href="#" class="footer-link">Sobre la marca</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-contacto">
+          <h2 id="ft-contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li>Paris, Francia</li>
+            <li><a href="mailto:hola@bararaza.com" class="footer-link">hola@bararaza.com</a></li>
+            <li><a href="tel:+33100000000" class="footer-link">+33 1 00 00 00 00</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="border-t border-[var(--c-edge)] px-4 py-4 text-center text-xs text-[var(--c-cloud)]">
+        2026 Bararaza Clothing Co. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <script src="./js/productos-data.js"></script>
+    <script src="./js/producto.js"></script>
+    <script src="./js/home-search.js"></script>
+    <script src="./js/cart-badge.js"></script>
+  </body>
+</html>

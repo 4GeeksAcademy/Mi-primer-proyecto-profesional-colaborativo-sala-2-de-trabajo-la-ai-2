@@ -1,0 +1,717 @@
+:root {
+  --c-night: #090116;
+  --c-indigo: #34345f;
+  --c-steel: #69727c;
+  --c-sand: #b2a88b;
+  --c-gold: #dccb8a;
+  --c-paper: #f8f6f0;
+  --c-ink: #1b1c25;
+  --c-cloud: #d8d5ca;
+  --c-edge: #4f5265;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at 85% 10%, color-mix(in oklab, var(--c-gold) 20%, transparent), transparent 30%),
+    radial-gradient(circle at 15% 60%, color-mix(in oklab, var(--c-indigo) 30%, transparent), transparent 40%),
+    var(--c-paper);
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.01em;
+}
+
+.site-bg {
+  background-attachment: fixed;
+}
+
+.nav-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--c-gold) 30%, transparent);
+  padding: 0.45rem 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.nav-pill:hover {
+  background: color-mix(in oklab, var(--c-gold) 22%, transparent);
+  color: var(--c-gold);
+}
+
+.nav-pill-active {
+  background: color-mix(in oklab, var(--c-gold) 22%, transparent);
+  color: var(--c-gold);
+  border-color: color-mix(in oklab, var(--c-gold) 55%, transparent);
+}
+
+.nav-pill-cart {
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.cart-count-badge {
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--c-gold);
+  color: var(--c-night);
+}
+
+.nav-pill-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.header-soft-note {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in oklab, var(--c-gold) 45%, transparent);
+  background: color-mix(in oklab, var(--c-gold) 16%, transparent);
+  color: var(--c-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.36rem 0.72rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .header-soft-note {
+    display: none;
+  }
+}
+
+.hero-wrap {
+  background:
+    linear-gradient(140deg, #090116 0%, #1c2340 52%, #2e3555 100%);
+  color: var(--c-paper);
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero-card {
+  background: linear-gradient(175deg, rgba(248, 246, 240, 0.08), rgba(248, 246, 240, 0.02));
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  background: var(--c-gold);
+  color: var(--c-night);
+  font-weight: 700;
+  padding: 0.78rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--c-paper) 45%, transparent);
+  color: var(--c-paper);
+  font-weight: 700;
+  padding: 0.78rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: color-mix(in oklab, var(--c-paper) 10%, transparent);
+}
+
+.metric-card {
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--c-gold) 30%, transparent);
+  background: color-mix(in oklab, var(--c-night) 76%, white 24%);
+  padding: 0.65rem 0.35rem;
+}
+
+.metric-card span {
+  display: block;
+  opacity: 0.8;
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--c-gold);
+}
+
+.product-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(210px, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.product-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-row::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--c-steel) 55%, white 45%);
+  border-radius: 999px;
+}
+
+.product-card {
+  scroll-snap-align: start;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 35%, white 65%);
+  background: color-mix(in oklab, var(--c-paper) 80%, white 20%);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  min-height: 280px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 25px -18px color-mix(in oklab, var(--c-night) 65%, transparent);
+}
+
+.product-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card h3 {
+  margin: 0.8rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.42rem;
+  line-height: 1.1;
+}
+
+.product-card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: var(--c-indigo);
+  font-weight: 700;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.8rem;
+  border: 1px solid color-mix(in oklab, var(--c-paper) 30%, transparent);
+}
+
+.thumb-1 {
+  background: linear-gradient(155deg, #39305f, #b4a88b);
+}
+
+.thumb-2 {
+  background: linear-gradient(155deg, #6a7079, #dccb8a);
+}
+
+.thumb-3 {
+  background: linear-gradient(155deg, #0c0320, #6a7079);
+}
+
+.thumb-4 {
+  background: linear-gradient(155deg, #dccb8a, #34345f);
+}
+
+.thumb-5 {
+  background: linear-gradient(155deg, #2e3055, #0d0423);
+}
+
+.thumb-6 {
+  background: linear-gradient(155deg, #a79b7e, #383a67);
+}
+
+.thumb-7 {
+  background: linear-gradient(155deg, #69727c, #110427);
+}
+
+.thumb-8 {
+  background: linear-gradient(155deg, #ccc1a1, #6a7079);
+}
+
+.thumb-9 {
+  background: linear-gradient(155deg, #070019, #b2a88b);
+}
+
+.thumb-10 {
+  background: linear-gradient(155deg, #34345f, #d8c277);
+}
+
+.footer-link {
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--c-gold);
+}
+
+.catalog-filter-panel {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1fr;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 30%, white 70%);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--c-paper) 86%, white 14%);
+  padding: 1rem;
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-indigo);
+}
+
+.filter-select {
+  width: 100%;
+  height: 46px;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 40%, white 60%);
+  border-radius: 0.75rem;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  padding: 0 0.8rem;
+  font-size: 0.94rem;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--c-gold);
+}
+
+.filter-input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 40%, white 60%);
+  border-radius: 0.75rem;
+  background: var(--c-paper);
+  color: var(--c-ink);
+  padding: 0 0.8rem;
+  font-size: 0.94rem;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--c-gold);
+}
+
+.price-range-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.catalog-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.catalog-card {
+  border: 1px solid color-mix(in oklab, var(--c-steel) 35%, white 65%);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--c-paper) 80%, white 20%);
+  overflow: hidden;
+  min-height: 308px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 25px -18px color-mix(in oklab, var(--c-night) 65%, transparent);
+}
+
+.catalog-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.8rem;
+}
+
+.catalog-actions {
+  padding: 0 0.8rem 0.8rem;
+}
+
+.catalog-add-btn {
+  width: 100%;
+}
+
+.catalog-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.78rem;
+  border: 1px solid color-mix(in oklab, var(--c-paper) 30%, transparent);
+}
+
+.catalog-card h3 {
+  margin: 0.75rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.34rem;
+  line-height: 1.15;
+}
+
+.catalog-meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--c-steel);
+  font-weight: 600;
+}
+
+.catalog-price {
+  margin: 0.45rem 0 0;
+  font-size: 0.94rem;
+  color: var(--c-indigo);
+  font-weight: 800;
+}
+
+.catalog-empty-state {
+  margin-top: 1rem;
+  border: 1px dashed color-mix(in oklab, var(--c-steel) 45%, white 55%);
+  border-radius: 0.85rem;
+  background: color-mix(in oklab, var(--c-paper) 85%, white 15%);
+  color: var(--c-indigo);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .catalog-filter-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-filter-panel {
+    grid-template-columns: 1.1fr 1.1fr 1.1fr 1.4fr auto;
+    align-items: end;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.product-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--c-steel);
+}
+
+.product-breadcrumb a {
+  color: var(--c-indigo);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product-breadcrumb a:hover {
+  color: var(--c-night);
+}
+
+.product-detail-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.product-detail-media {
+  border: 1px solid color-mix(in oklab, var(--c-steel) 30%, white 70%);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--c-paper) 90%, white 10%);
+  box-shadow: 0 18px 30px -24px color-mix(in oklab, var(--c-night) 55%, transparent);
+}
+
+.product-detail-media .thumb {
+  border: none;
+  border-radius: 0;
+}
+
+.product-badge {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--c-gold) 40%, transparent);
+  background: color-mix(in oklab, var(--c-gold) 12%, transparent);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-indigo);
+}
+
+.product-detail-title {
+  margin: 0.75rem 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--c-night);
+}
+
+.product-meta-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem 1rem;
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.product-meta-grid dt {
+  color: var(--c-steel);
+  font-weight: 700;
+}
+
+.product-meta-grid dd {
+  margin: 0;
+  color: var(--c-ink);
+}
+
+.product-price-value {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--c-indigo);
+}
+
+.size-fieldset {
+  margin: 1.5rem 0 0;
+  border: 0;
+  padding: 0;
+}
+
+.size-fieldset legend {
+  margin-bottom: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-indigo);
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.size-option {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.size-option + label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0.65rem;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 45%, white 55%);
+  border-radius: 0.65rem;
+  background: var(--c-paper);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-option + label:hover {
+  border-color: var(--c-gold);
+}
+
+.size-option:checked + label {
+  background: var(--c-night);
+  border-color: var(--c-night);
+  color: var(--c-paper);
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--c-steel) 45%, white 55%);
+  border-radius: 0.65rem;
+  background: var(--c-paper);
+}
+
+.quantity-btn {
+  border: 0;
+  background: transparent;
+  padding: 0.55rem 0.85rem;
+  font-size: 1.1rem;
+  color: var(--c-steel);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.quantity-btn:hover {
+  background: color-mix(in oklab, var(--c-gold) 18%, transparent);
+}
+
+.quantity-input {
+  width: 3.25rem;
+  border: 0;
+  border-inline: 1px solid color-mix(in oklab, var(--c-steel) 35%, white 65%);
+  background: transparent;
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.quantity-input:focus {
+  outline: none;
+}
+
+.product-shipping-note {
+  margin: 1rem 0 0;
+  font-size: 0.82rem;
+  color: var(--c-steel);
+}
+
+.product-desc-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid color-mix(in oklab, var(--c-steel) 30%, white 70%);
+}
+
+.product-desc-section h2 {
+  margin: 0 0 1.25rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--c-night);
+}
+
+.product-desc-grid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 56rem;
+}
+
+.product-desc-grid h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-indigo);
+}
+
+.product-desc-grid p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--c-indigo);
+}
+
+@media (min-width: 640px) {
+  .product-actions {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .product-desc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-wrap article,
+  .product-card,
+  footer section {
+    animation: rise-in 0.7s ease both;
+  }
+
+  .hero-wrap article:nth-child(2) {
+    animation-delay: 0.14s;
+  }
+
+  .product-card:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+
+  .product-card:nth-child(3) {
+    animation-delay: 0.14s;
+  }
+
+  .product-card:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
