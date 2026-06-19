@@ -47,6 +47,14 @@ function updateSummary(cart) {
   if (subtotalElement) subtotalElement.textContent = formatCurrency(subtotal);
   if (taxElement) taxElement.textContent = formatCurrency(taxes);
   if (totalElement) totalElement.textContent = formatCurrency(total);
+
+  const checkoutButton = document.getElementById("go-checkout-btn");
+  const hasItems = cart.length > 0;
+
+  if (checkoutButton) {
+    checkoutButton.disabled = !hasItems;
+    checkoutButton.setAttribute("aria-disabled", String(!hasItems));
+  }
 }
 
 function buildCartItem(item, index) {
@@ -125,6 +133,7 @@ function handleCartAction(target) {
 document.addEventListener("DOMContentLoaded", () => {
   const cartList = document.getElementById("cart-list");
   if (!cartList) return;
+  const checkoutButton = document.getElementById("go-checkout-btn");
 
   cartList.addEventListener("click", (event) => {
     handleCartAction(event.target);
@@ -146,6 +155,14 @@ document.addEventListener("DOMContentLoaded", () => {
     saveCart(cart);
     renderCart();
   });
+
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", () => {
+      if (getCart().length) {
+        window.location.href = "checkout.html";
+      }
+    });
+  }
 
   renderCart();
 });

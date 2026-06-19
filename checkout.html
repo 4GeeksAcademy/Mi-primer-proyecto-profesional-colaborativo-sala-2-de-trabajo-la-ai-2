@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bararaza Clothing Co. | Checkout</title>
+    <meta
+      name="description"
+      content="Formulario de pago en 3 pasos de Bararaza Clothing Co.: datos personales, direccion de entrega y pago con tarjeta."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Bararaza Clothing Co. | Checkout" />
+    <meta
+      property="og:description"
+      content="Completa tu compra en el checkout de Bararaza Clothing Co. con flujo guiado en tres pasos."
+    />
+    <meta property="og:type" content="website" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles-home.css?v=20260618" />
+    <link rel="stylesheet" href="./checkout.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CheckoutPage",
+        "name": "Checkout Bararaza Clothing Co.",
+        "url": "checkout.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Bararaza Clothing Co."
+        },
+        "description": "Flujo de compra simulado en 3 pasos para finalizar pedidos online."
+      }
+    </script>
+  </head>
+  <body class="site-bg text-[var(--c-ink)] antialiased">
+    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
+        <a href="index-home.html" class="shrink-0" aria-label="Ir al inicio">
+          <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
+        </a>
+
+        <form class="hidden w-full max-w-sm md:block lg:max-w-md" role="search" action="catalogo.html" method="get" aria-label="Buscar productos">
+          <label for="q" class="sr-only">Buscar productos</label>
+          <div class="relative">
+            <input
+              id="q"
+              name="q"
+              type="search"
+              placeholder="Buscar camisas, pantalones, accesorios..."
+              class="w-full rounded-full border border-[var(--c-steel)]/45 bg-[var(--c-paper)] px-4 py-2 text-[13px] text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+            />
+          </div>
+        </form>
+
+        <ul class="mx-auto flex items-center gap-3 text-sm font-semibold text-[var(--c-paper)] sm:gap-4 md:mx-0 md:ml-10 lg:ml-12">
+          <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
+          <li><a href="carrito.html" class="nav-pill nav-pill-cart">Carrito <span class="cart-count-badge js-cart-count" hidden>0</span></a></li>
+        </ul>
+      </nav>
+
+      <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
+        <label for="q-mobile" class="sr-only">Buscar productos</label>
+        <input
+          id="q-mobile"
+          name="q"
+          type="search"
+          placeholder="Buscar productos"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-4 py-2 text-[13px] text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+        />
+      </form>
+    </header>
+
+    <main>
+      <section class="checkout-hero hero-wrap relative isolate overflow-hidden">
+        <div class="hero-noise"></div>
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+          <p class="inline-flex rounded-full border border-[var(--c-gold)]/40 bg-[var(--c-gold)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[var(--c-gold)]">
+            Flujo de pago
+          </p>
+          <h1 class="mt-4 font-display text-4xl leading-tight text-[var(--c-paper)] sm:text-5xl">Checkout en 3 pasos</h1>
+          <p class="mt-3 max-w-3xl text-base text-[var(--c-cloud)] sm:text-lg">
+            Completa tus datos y finaliza el pedido en un proceso guiado. Esta es una simulacion de compra sin cobro real.
+          </p>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="checkout-title">
+        <h2 id="checkout-title" class="sr-only">Formulario de checkout</h2>
+
+        <div class="checkout-layout">
+          <article class="checkout-form-card" aria-label="Formulario de pago paso a paso">
+            <ol class="checkout-steps" aria-label="Pasos del checkout">
+              <li class="checkout-step is-active" data-step-indicator="1"><span>1</span>Datos personales</li>
+              <li class="checkout-step" data-step-indicator="2"><span>2</span>Direccion de entrega</li>
+              <li class="checkout-step" data-step-indicator="3"><span>3</span>Pago con tarjeta</li>
+            </ol>
+
+            <form id="checkout-form" novalidate>
+              <section class="checkout-panel" data-step="1" aria-labelledby="step-1-title">
+                <h3 id="step-1-title">Datos personales</h3>
+                <div class="checkout-grid">
+                  <div>
+                    <label class="filter-label" for="nombre">Nombre</label>
+                    <input class="filter-input" id="nombre" name="nombre" type="text" autocomplete="given-name" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="apellidos">Apellidos</label>
+                    <input class="filter-input" id="apellidos" name="apellidos" type="text" autocomplete="family-name" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="email">Email</label>
+                    <input class="filter-input" id="email" name="email" type="email" autocomplete="email" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="telefono">Telefono</label>
+                    <input class="filter-input" id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required />
+                  </div>
+                </div>
+              </section>
+
+              <section class="checkout-panel" data-step="2" aria-labelledby="step-2-title" hidden>
+                <h3 id="step-2-title">Direccion de entrega</h3>
+                <div class="checkout-grid">
+                  <div class="checkout-col-span-2">
+                    <label class="filter-label" for="direccion">Direccion</label>
+                    <input class="filter-input" id="direccion" name="direccion" type="text" autocomplete="address-line1" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="ciudad">Ciudad</label>
+                    <input class="filter-input" id="ciudad" name="ciudad" type="text" autocomplete="address-level2" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="region">Region</label>
+                    <input class="filter-input" id="region" name="region" type="text" autocomplete="address-level1" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="cp">Codigo postal</label>
+                    <input class="filter-input" id="cp" name="cp" type="text" inputmode="numeric" autocomplete="postal-code" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="pais">Pais</label>
+                    <select id="pais" name="pais" class="filter-select" required>
+                      <option value="">Selecciona un pais</option>
+                      <option value="francia">Francia</option>
+                      <option value="espana">Espana</option>
+                      <option value="italia">Italia</option>
+                      <option value="alemania">Alemania</option>
+                      <option value="portugal">Portugal</option>
+                    </select>
+                  </div>
+                </div>
+              </section>
+
+              <section class="checkout-panel" data-step="3" aria-labelledby="step-3-title" hidden>
+                <h3 id="step-3-title">Pago con tarjeta</h3>
+                <div class="checkout-grid">
+                  <div class="checkout-col-span-2">
+                    <label class="filter-label" for="titular">Titular de la tarjeta</label>
+                    <input class="filter-input" id="titular" name="titular" type="text" autocomplete="cc-name" required />
+                  </div>
+                  <div class="checkout-col-span-2">
+                    <label class="filter-label" for="numero">Numero de tarjeta</label>
+                    <input class="filter-input" id="numero" name="numero" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="19" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="vencimiento">Vencimiento (MM/AA)</label>
+                    <input class="filter-input" id="vencimiento" name="vencimiento" type="text" inputmode="numeric" autocomplete="cc-exp" maxlength="5" required />
+                  </div>
+                  <div>
+                    <label class="filter-label" for="cvv">CVV</label>
+                    <input class="filter-input" id="cvv" name="cvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required />
+                  </div>
+                </div>
+
+                <label class="checkout-checkbox" for="acepto">
+                  <input id="acepto" name="acepto" type="checkbox" required />
+                  Acepto terminos y condiciones de la compra simulada.
+                </label>
+              </section>
+
+              <p id="checkout-error" class="checkout-error" role="alert" aria-live="polite"></p>
+              <p id="checkout-success" class="checkout-success" role="status" aria-live="polite" hidden></p>
+
+              <div class="checkout-actions">
+                <button id="checkout-prev" type="button" class="btn-ghost checkout-btn" disabled>Atras</button>
+                <button id="checkout-next" type="button" class="btn-primary checkout-btn">Continuar</button>
+                <button id="checkout-submit" type="submit" class="btn-primary checkout-btn" hidden>Finalizar pedido</button>
+              </div>
+            </form>
+          </article>
+
+          <aside class="checkout-summary-card" aria-label="Resumen de pedido">
+            <h2>Resumen del pedido</h2>
+            <ul id="checkout-summary-list" class="checkout-summary-list"></ul>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkout-subtotal">EUR 0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Impuestos (19%)</span>
+              <strong id="checkout-tax">EUR 0</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="checkout-total">EUR 0</strong>
+            </div>
+            <p class="summary-note">Pago simulado. No se realiza ningun cargo real.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[var(--c-edge)] bg-[var(--c-night)] text-[var(--c-paper)]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="ft-brand" class="space-y-3">
+          <h2 id="ft-brand" class="font-display text-2xl">Bararaza Clothing Co.</h2>
+          <p class="max-w-xs text-sm text-[var(--c-cloud)]">Moda premium con inspiracion francesa, diseno util y acabados de alto nivel.</p>
+        </section>
+
+        <section aria-labelledby="ft-categorias">
+          <h2 id="ft-categorias" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="catalogo.html?categoria=calzado" class="footer-link">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="footer-link">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="footer-link">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="footer-link">Accesorios</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-legal">
+          <h2 id="ft-legal" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li><a href="#" class="footer-link">Terminos y condiciones</a></li>
+            <li><a href="#" class="footer-link">Politica de privacidad</a></li>
+            <li><a href="#" class="footer-link">Sobre la marca</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="ft-contacto">
+          <h2 id="ft-contacto" class="text-sm font-bold uppercase tracking-[0.15em] text-[var(--c-gold)]">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--c-cloud)]">
+            <li>Paris, Francia</li>
+            <li><a href="mailto:hola@bararaza.com" class="footer-link">hola@bararaza.com</a></li>
+            <li><a href="tel:+33100000000" class="footer-link">+33 1 00 00 00 00</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="border-t border-[var(--c-edge)] px-4 py-4 text-center text-xs text-[var(--c-cloud)]">
+        2026 Bararaza Clothing Co. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <script src="./js/productos-data.js"></script>
+    <script src="./js/home-search.js"></script>
+    <script src="./js/cart-badge.js"></script>
+    <script src="./checkout.js"></script>
+  </body>
+</html>
