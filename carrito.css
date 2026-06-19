@@ -1,14 +1,14 @@
 :root {
-  --night: #0b0123;
-  --indigo: #34335e;
-  --steel: #666f79;
-  --stone: #b5ab8d;
-  --sand: #dbc889;
-  --paper: #f7f4eb;
-  --ink: #161027;
+  --night: #090116;
+  --indigo: #34345f;
+  --steel: #69727c;
+  --stone: #b2a88b;
+  --sand: #dccb8a;
+  --paper: #f8f6f0;
+  --ink: #1b1c25;
   --radius-lg: 20px;
   --radius-md: 14px;
-  --shadow: 0 20px 45px rgba(11, 1, 35, 0.2);
+  --shadow: 0 20px 45px rgba(9, 1, 22, 0.18);
 }
 
 * {
@@ -26,9 +26,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 10% 10%, rgba(219, 200, 137, 0.36), transparent 28%),
-    radial-gradient(circle at 85% 0%, rgba(52, 51, 94, 0.3), transparent 35%),
-    linear-gradient(145deg, #f6f2e7 0%, #ece6d6 100%);
+    radial-gradient(circle at 10% 10%, rgba(220, 203, 138, 0.3), transparent 28%),
+    radial-gradient(circle at 85% 0%, rgba(52, 52, 95, 0.26), transparent 35%),
+    linear-gradient(145deg, #f8f6f0 0%, #ece6d6 100%);
 }
 
 .site-header,
@@ -56,7 +56,7 @@ main,
 
 .brand-name {
   margin: 0.4rem 0 0;
-  font-family: "Prata", serif;
+  font-family: "Cormorant Garamond", serif;
   letter-spacing: 0.03rem;
   color: var(--night);
 }
@@ -103,7 +103,7 @@ main {
 .cart-block,
 .summary-card {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(181, 171, 141, 0.34);
+  border: 1px solid rgba(178, 168, 139, 0.34);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
@@ -115,14 +115,14 @@ main {
 .cart-block h2,
 .summary-card h2 {
   margin: 0;
-  font-family: "Prata", serif;
+  font-family: "Cormorant Garamond", serif;
   color: var(--night);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .cart-intro {
   margin: 0.7rem 0 1.2rem;
-  color: #3b3652;
+  color: #434054;
 }
 
 .cart-list {
@@ -138,17 +138,17 @@ main {
   grid-template-columns: 84px 1fr auto auto auto;
   gap: 0.85rem;
   align-items: center;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(246, 240, 223, 0.8));
-  border: 1px solid rgba(181, 171, 141, 0.45);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(248, 246, 240, 0.85));
+  border: 1px solid rgba(178, 168, 139, 0.45);
   border-radius: var(--radius-md);
   padding: 0.8rem;
 }
 
 .cart-empty {
-  border: 1px dashed rgba(52, 51, 94, 0.35);
+  border: 1px dashed rgba(52, 52, 95, 0.35);
   border-radius: var(--radius-md);
   padding: 1rem;
-  color: #4c4565;
+  color: #4c465f;
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -161,24 +161,24 @@ main {
   width: 84px;
   height: 84px;
   border-radius: 12px;
-  border: 1px solid rgba(11, 1, 35, 0.12);
+  border: 1px solid rgba(9, 1, 22, 0.12);
 }
 
 .thumb-1 {
   background:
-    linear-gradient(180deg, transparent 62%, rgba(11, 1, 35, 0.1) 62%),
+    linear-gradient(180deg, transparent 62%, rgba(9, 1, 22, 0.1) 62%),
     linear-gradient(120deg, #d9c489, #b3a98b);
 }
 
 .thumb-2 {
   background:
-    linear-gradient(180deg, transparent 60%, rgba(11, 1, 35, 0.1) 60%),
+    linear-gradient(180deg, transparent 60%, rgba(9, 1, 22, 0.1) 60%),
     linear-gradient(120deg, #606876, #2e2f57);
 }
 
 .thumb-3 {
   background:
-    linear-gradient(180deg, transparent 60%, rgba(11, 1, 35, 0.1) 60%),
+    linear-gradient(180deg, transparent 60%, rgba(9, 1, 22, 0.1) 60%),
     linear-gradient(120deg, #c3b89a, #7f7b6f);
 }
 
@@ -191,14 +191,14 @@ main {
 .item-meta,
 .unit-price {
   margin: 0.35rem 0 0;
-  color: #4c4565;
+  color: #4c465f;
   font-size: 0.92rem;
 }
 
 .qty-control {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(52, 51, 94, 0.28);
+  border: 1px solid rgba(52, 52, 95, 0.28);
   border-radius: 999px;
   padding: 0.25rem;
   background: #fff;
@@ -243,7 +243,7 @@ main {
 }
 
 .remove-btn {
-  border: 1px solid rgba(52, 51, 94, 0.25);
+  border: 1px solid rgba(52, 52, 95, 0.25);
   border-radius: 999px;
   padding: 0.45rem 0.75rem;
   background: #fff;

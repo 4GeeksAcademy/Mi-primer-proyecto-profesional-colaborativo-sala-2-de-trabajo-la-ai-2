@@ -33,8 +33,20 @@ body {
   letter-spacing: 0.01em;
 }
 
-.site-bg {
-  background-attachment: fixed;
+.site-header-shell {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--c-edge);
+  background: rgba(9, 1, 22, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (min-width: 1024px) {
+  .site-bg {
+    background-attachment: fixed;
+  }
 }
 
 .nav-pill {
