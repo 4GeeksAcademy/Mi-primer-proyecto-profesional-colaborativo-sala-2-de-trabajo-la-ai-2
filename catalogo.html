@@ -45,7 +45,7 @@
           <img src="images/logo_Bararaza.png" alt="Logo Bararaza Clothing Co." class="h-11 w-auto rounded-lg" />
         </a>
 
-        <form class="hidden flex-1 md:block" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en catalogo">
+        <form class="hidden w-full max-w-sm md:block lg:max-w-md" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en catalogo">
           <label for="q" class="sr-only">Buscar productos</label>
           <div class="relative">
             <input
@@ -53,19 +53,15 @@
               name="q"
               type="search"
               placeholder="Buscar camisas, pantalones, accesorios..."
-              class="w-full rounded-full border border-[var(--c-steel)]/50 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+              class="w-full rounded-full border border-[var(--c-steel)]/45 bg-[var(--c-paper)] px-4 py-2 text-[13px] text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
             />
           </div>
         </form>
 
-        <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
+        <ul class="mx-auto flex items-center gap-3 text-sm font-semibold text-[var(--c-paper)] sm:gap-4 md:mx-0 md:ml-10 lg:ml-12">
           <li><a href="catalogo.html" class="nav-pill nav-pill-active" aria-current="page">Catalogo</a></li>
           <li><a href="carrito.html" class="nav-pill nav-pill-cart">Carrito <span class="cart-count-badge js-cart-count" hidden>0</span></a></li>
-          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Checkout</span></li>
-          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
-
-        <p class="header-soft-note" aria-live="polite">Cuenta y checkout proximamente</p>
       </nav>
 
       <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
@@ -75,7 +71,7 @@
           name="q"
           type="search"
           placeholder="Buscar productos"
-          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-5 py-2.5 text-sm text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
+          class="w-full rounded-full border border-[var(--c-steel)]/40 bg-[var(--c-paper)] px-4 py-2 text-[13px] text-[var(--c-ink)] placeholder:text-[var(--c-steel)]/80 focus:border-[var(--c-gold)] focus:outline-none"
         />
       </form>
     </header>
