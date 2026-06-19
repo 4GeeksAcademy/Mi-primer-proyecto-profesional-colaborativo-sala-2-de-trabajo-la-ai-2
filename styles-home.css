@@ -56,6 +56,26 @@ body {
   border-color: color-mix(in oklab, var(--c-gold) 55%, transparent);
 }
 
+.nav-pill-cart {
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.cart-count-badge {
+  min-width: 1.2rem;
+  height: 1.2rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--c-gold);
+  color: var(--c-night);
+}
+
 .nav-pill-disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -349,6 +369,14 @@ body {
   color: inherit;
   text-decoration: none;
   padding: 0.8rem;
+}
+
+.catalog-actions {
+  padding: 0 0.8rem 0.8rem;
+}
+
+.catalog-add-btn {
+  width: 100%;
 }
 
 .catalog-thumb {

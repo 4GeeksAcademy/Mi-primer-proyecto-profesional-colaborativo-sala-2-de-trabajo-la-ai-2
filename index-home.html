@@ -56,11 +56,12 @@
 
         <ul class="ml-auto flex items-center gap-2 text-sm font-semibold text-[var(--c-paper)] sm:gap-3">
           <li><a href="catalogo.html" class="nav-pill">Catalogo</a></li>
-          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Carrito</span></li>
+          <li><a href="carrito.html" class="nav-pill nav-pill-cart">Carrito <span class="cart-count-badge js-cart-count" hidden>0</span></a></li>
+          <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Checkout</span></li>
           <li><span class="nav-pill nav-pill-disabled" aria-disabled="true" title="Proximamente">Cuenta</span></li>
         </ul>
 
-        <p class="header-soft-note" aria-live="polite">Carrito y cuenta proximamente</p>
+        <p class="header-soft-note" aria-live="polite">Cuenta y checkout proximamente</p>
       </nav>
 
       <form class="mx-auto max-w-7xl px-4 pb-3 md:hidden sm:px-6" role="search" action="catalogo.html" method="get" aria-label="Buscar productos en movil">
@@ -242,5 +243,6 @@
     </footer>
     <script src="./js/productos-data.js"></script>
     <script src="./js/home-search.js"></script>
+    <script src="./js/cart-badge.js"></script>
   </body>
 </html>

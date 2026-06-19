@@ -1,7 +1,39 @@
 (function () {
+  var CART_KEY = "bararaza_cart_v1";
   var params = new URLSearchParams(window.location.search);
   var productId = params.get("id") || "camisa-atelier-blanche";
   var product = window.PRODUCTOS[productId] || window.PRODUCTOS["camisa-atelier-blanche"];
+
+  function getCart() {
+    try {
+      var raw = window.localStorage.getItem(CART_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    window.localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    window.dispatchEvent(new Event("cart:updated"));
+  }
+
+  function addToCart(item) {
+    var cart = getCart();
+    var existingIndex = cart.findIndex(function (entry) {
+      return entry.id === item.id && entry.size === item.size;
+    });
+
+    if (existingIndex >= 0) {
+      cart[existingIndex].qty += item.qty;
+    } else {
+      cart.push(item);
+    }
+
+    saveCart(cart);
+  }
 
   function formatPrice(value) {
     return value.toFixed(2).replace(".", ",") + " EUR";
@@ -69,7 +101,27 @@
 
   var cartForm = document.getElementById("product-cart-form");
   if (cartForm) {
-    cartForm.action = "#";
+    cartForm.action = "carrito.html";
+    cartForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var qtyInput = document.getElementById("cantidad");
+      var parsedQty = Number.parseInt(qtyInput ? qtyInput.value : "1", 10);
+      var qty = Number.isNaN(parsedQty) || parsedQty < 1 ? 1 : parsedQty;
+      var sizeInput = document.querySelector('input[name="talla"]:checked');
+      var selectedSize = sizeInput ? sizeInput.value : product.sizes[0];
+
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: Number(product.price),
+        thumbClass: product.thumbClass,
+        size: selectedSize,
+        qty: qty,
+      });
+
+      window.location.href = "carrito.html";
+    });
   }
 
   var schema = {

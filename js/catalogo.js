@@ -1,4 +1,5 @@
 (function () {
+  var CART_KEY = "bararaza_cart_v1";
   var productsById = window.PRODUCTOS || {};
   var products = Object.keys(productsById).map(function (id) {
     return productsById[id];
@@ -129,8 +130,53 @@
       '<span itemprop="priceCurrency" content="EUR">EUR</span> <span itemprop="price" content="' + Number(product.price) + '">' + Number(product.price) + "</span>",
       "</p>",
       "</a>",
+      '<div class="catalog-actions">',
+      '<button type="button" class="btn-primary catalog-add-btn" data-add-to-cart="' + escapeHtml(product.id) + '">Anadir al carrito</button>',
+      "</div>",
       "</article>",
     ].join("");
+  }
+
+  function getCart() {
+    try {
+      var raw = window.localStorage.getItem(CART_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    window.localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    window.dispatchEvent(new Event("cart:updated"));
+  }
+
+  function addToCart(productId) {
+    var product = productsById[productId];
+    if (!product) return;
+
+    var cart = getCart();
+    var defaultSize = product.sizes[0] || "Unica";
+    var existingIndex = cart.findIndex(function (entry) {
+      return entry.id === product.id && entry.size === defaultSize;
+    });
+
+    if (existingIndex >= 0) {
+      cart[existingIndex].qty += 1;
+    } else {
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: Number(product.price),
+        thumbClass: product.thumbClass,
+        size: defaultSize,
+        qty: 1,
+      });
+    }
+
+    saveCart(cart);
   }
 
   var datalistId = "product-suggestions-catalog";
@@ -394,6 +440,24 @@
   if (applyBtn) {
     applyBtn.addEventListener("click", render);
   }
+
+  grid.addEventListener("click", function (event) {
+    var addButton = event.target.closest("[data-add-to-cart]");
+    if (!addButton) return;
+
+    event.preventDefault();
+    var productId = addButton.getAttribute("data-add-to-cart");
+    addToCart(productId);
+
+    var previousText = addButton.textContent;
+    addButton.textContent = "Agregado";
+    addButton.disabled = true;
+
+    setTimeout(function () {
+      addButton.textContent = previousText;
+      addButton.disabled = false;
+    }, 700);
+  });
 
   applyInitialState();
   render();
