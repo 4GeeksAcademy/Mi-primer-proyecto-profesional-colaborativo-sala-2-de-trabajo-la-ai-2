@@ -1,0 +1,138 @@
+/* Estilos compartidos — BARARAZA CLOTHING CO. */
+
+/*
+  Paleta de colores del proyecto
+  1. ink    #0D0814  — negro-púrpura profundo
+  2. slate  #2C2C44  — azul pizarra oscuro
+  3. muted  #646C74  — gris pizarra
+  4. khaki  #BDB594  — khaki / beige apagado
+  5. sand   #EBD494  — arena dorada pálida
+*/
+
+:root {
+  --color-ink: #0D0814;
+  --color-slate: #2C2C44;
+  --color-muted: #646C74;
+  --color-khaki: #BDB594;
+  --color-sand: #EBD494;
+  --color-bg: #FAF8F3;
+
+  --color-primary: var(--color-ink);
+  --color-secondary: var(--color-slate);
+  --color-accent: var(--color-sand);
+  --color-border: var(--color-khaki);
+  --color-text: var(--color-ink);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid var(--color-khaki);
+}
+
+.site-logo img {
+  height: 2.5rem;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .site-logo img {
+    height: 3rem;
+  }
+}
+
+.search-input {
+  border-color: var(--color-khaki);
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-sand);
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--color-ink);
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-slate);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Producto */
+.product-image {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.quantity-btn {
+  transition: background-color 0.15s ease;
+}
+
+.quantity-btn:hover {
+  background-color: color-mix(in srgb, var(--color-khaki) 25%, white);
+}
+
+.size-option:checked + label {
+  background-color: var(--color-ink);
+  color: #fff;
+  border-color: var(--color-ink);
+}
+
+.size-option + label {
+  border-color: var(--color-khaki);
+}
+
+.size-option + label:hover {
+  border-color: var(--color-slate);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-ink);
+  color: var(--color-khaki);
+}
+
+.site-footer a {
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--color-sand);
+}
+
+.footer-logo {
+  height: 2.5rem;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Accesibilidad: foco visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-sand);
+  outline-offset: 2px;
+}

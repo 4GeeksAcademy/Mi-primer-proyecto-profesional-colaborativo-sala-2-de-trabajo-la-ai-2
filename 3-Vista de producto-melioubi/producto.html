@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Camisa de lino París — BARARAZA CLOTHING CO. Prenda elegante de algodón y lino para uso diario y ocasiones especiales. Envío a toda Europa.">
+  <meta name="robots" content="index, follow">
+  <title>Camisa de Lino París | BARARAZA CLOTHING CO.</title>
+
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+  <!-- Tailwind CSS compilado (sin CDN ni frameworks como React) -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BARARAZA CLOTHING CO.",
+    "url": "../index-home.html",
+    "logo": "assets/logo-bararaza.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+33-1-45-67-89-00",
+      "contactType": "customer service",
+      "email": "contacto@bararaza.fr",
+      "availableLanguage": ["Spanish", "French"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 Rue du Faubourg",
+      "addressLocality": "París",
+      "postalCode": "75008",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <!-- Schema.org: Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Camisa de Lino París",
+    "sku": "BRZ-CAM-2024-001",
+    "description": "Camisa de corte clásico confeccionada en mezcla de algodón orgánico y lino francés. Ideal para el día a día en la oficina o salidas informales con estilo.",
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=75&auto=format&fit=crop",
+    "brand": {
+      "@type": "Brand",
+      "name": "BARARAZA"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "producto.html",
+      "priceCurrency": "EUR",
+      "price": "89.00",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "BARARAZA CLOTHING CO."
+      }
+    },
+    "material": "Algodón orgánico 70%, lino francés 30%"
+  }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-cream font-sans text-ink antialiased overflow-x-hidden">
+
+  <!-- HEADER / NAVBAR (reutilizable en todas las vistas) -->
+  <header class="site-header sticky top-0 z-50" role="banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20 gap-3 sm:gap-4">
+
+        <!-- Logo -->
+        <a href="../index-home.html" class="site-logo shrink-0" aria-label="BARARAZA CLOTHING CO. — Inicio">
+          <img
+            src="assets/logo-bararaza.png"
+            alt="BARARAZA CLOTHING CO."
+            width="160"
+            height="48"
+            decoding="async"
+          >
+        </a>
+
+        <!-- Barra de búsqueda (tablet y escritorio) -->
+        <form role="search" action="catalogo.html" method="get" class="hidden sm:flex flex-1 max-w-md mx-2 lg:mx-4 min-w-0">
+          <label for="search" class="sr-only">Buscar productos</label>
+          <div class="relative w-full">
+            <input
+              type="search"
+              id="search"
+              name="q"
+              placeholder="Buscar camisas, pantalones…"
+              class="search-input w-full py-2 pl-4 pr-10 text-sm border rounded-full bg-cream focus:bg-white"
+            >
+            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink" aria-label="Buscar">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Menú de cuenta y carrito -->
+        <nav aria-label="Cuenta y carrito" class="flex items-center gap-2 sm:gap-3 md:gap-5 shrink-0">
+          <a href="catalogo.html" class="hidden md:inline text-sm text-muted hover:text-ink transition-colors">Catálogo</a>
+          <a href="#" class="flex items-center gap-1 text-sm text-muted hover:text-ink transition-colors" aria-label="Mi cuenta">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+            <span class="hidden sm:inline">Cuenta</span>
+          </a>
+          <a href="carrito.html" class="flex items-center gap-1 text-sm text-muted hover:text-ink transition-colors" aria-label="Carrito de compras">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="hidden sm:inline">Carrito</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Búsqueda móvil -->
+      <form role="search" action="catalogo.html" method="get" class="sm:hidden pb-3">
+        <label for="search-mobile" class="sr-only">Buscar productos</label>
+        <input
+          type="search"
+          id="search-mobile"
+          name="q"
+          placeholder="Buscar productos…"
+          class="search-input w-full py-2 px-4 text-sm border rounded-full bg-cream"
+        >
+      </form>
+    </div>
+  </header>
+
+  <main id="main-content" class="flex-1 w-full max-w-full" role="main">
+
+    <!-- Migas de pan -->
+    <nav aria-label="Ruta de navegación" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <ol class="flex flex-wrap items-center gap-1 text-sm text-muted">
+        <li><a href="../index-home.html" class="hover:text-ink transition-colors">Inicio</a></li>
+        <li aria-hidden="true" class="mx-1">/</li>
+        <li><a href="catalogo.html" class="hover:text-ink transition-colors">Camisas</a></li>
+        <li aria-hidden="true" class="mx-1">/</li>
+        <li aria-current="page" class="text-ink font-medium">Camisa de Lino París</li>
+      </ol>
+    </nav>
+
+    <!-- Vista de producto: dos columnas -->
+    <article itemscope itemtype="https://schema.org/Product" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+
+        <!-- Columna izquierda: imagen (~50 % en escritorio) -->
+        <section aria-label="Imagen del producto" class="w-full min-w-0">
+          <figure class="relative overflow-hidden rounded-lg bg-white shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=75&auto=format&fit=crop"
+              alt="Camisa de lino París color blanco roto, vista frontal — BARARAZA"
+              width="800"
+              height="1067"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              class="product-image w-full h-auto"
+              itemprop="image"
+            >
+          </figure>
+        </section>
+
+        <!-- Columna derecha: información principal -->
+        <section aria-label="Información del producto" class="flex flex-col gap-6 min-w-0">
+          <header>
+            <p class="text-xs uppercase tracking-[0.2em] text-accent font-medium mb-2">Nueva colección</p>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-primary leading-tight" itemprop="name">
+              Camisa de Lino París
+            </h1>
+          </header>
+
+          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
+            <dt class="text-muted font-medium">Código</dt>
+            <dd class="text-ink" itemprop="sku">BRZ-CAM-2024-001</dd>
+
+            <dt class="text-muted font-medium">Precio</dt>
+            <dd>
+              <data value="89.00" itemprop="price" content="89.00" class="text-2xl font-semibold text-primary">
+                89,00&nbsp;€
+              </data>
+              <meta itemprop="priceCurrency" content="EUR">
+            </dd>
+          </dl>
+
+          <!-- Selector de talla -->
+          <fieldset class="min-w-0">
+            <legend class="text-sm font-medium text-slate mb-3">Talla</legend>
+            <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Seleccionar talla">
+              <input type="radio" name="talla" id="talla-xs" value="XS" class="sr-only size-option">
+              <label for="talla-xs" class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 border border-khaki rounded-md text-sm cursor-pointer hover:border-slate transition-colors">XS</label>
+
+              <input type="radio" name="talla" id="talla-s" value="S" class="sr-only size-option">
+              <label for="talla-s" class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 border border-khaki rounded-md text-sm cursor-pointer hover:border-slate transition-colors">S</label>
+
+              <input type="radio" name="talla" id="talla-m" value="M" class="sr-only size-option" checked>
+              <label for="talla-m" class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 border border-khaki rounded-md text-sm cursor-pointer hover:border-slate transition-colors">M</label>
+
+              <input type="radio" name="talla" id="talla-l" value="L" class="sr-only size-option">
+              <label for="talla-l" class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 border border-khaki rounded-md text-sm cursor-pointer hover:border-slate transition-colors">L</label>
+
+              <input type="radio" name="talla" id="talla-xl" value="XL" class="sr-only size-option">
+              <label for="talla-xl" class="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 border border-khaki rounded-md text-sm cursor-pointer hover:border-slate transition-colors">XL</label>
+            </div>
+          </fieldset>
+
+          <!-- Cantidad + Añadir al carrito -->
+          <form action="carrito.html" method="get" class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-end w-full">
+            <div>
+              <label for="cantidad" class="block text-sm font-medium text-slate mb-2">Cantidad</label>
+              <div class="inline-flex items-center border border-khaki rounded-md overflow-hidden">
+                <button type="button" class="quantity-btn px-3 py-2 text-lg text-muted" aria-label="Disminuir cantidad" onclick="updateQty(-1)">−</button>
+                <input
+                  type="number"
+                  id="cantidad"
+                  name="cantidad"
+                  value="1"
+                  min="1"
+                  max="10"
+                  class="w-14 text-center py-2 border-x border-khaki text-sm focus:outline-none"
+                  aria-label="Cantidad de productos"
+                >
+                <button type="button" class="quantity-btn px-3 py-2 text-lg text-muted" aria-label="Aumentar cantidad" onclick="updateQty(1)">+</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary w-full sm:w-auto px-8 py-3 rounded-md text-sm font-semibold uppercase tracking-wider">
+              Añadir al carrito
+            </button>
+          </form>
+
+          <p class="text-xs text-muted flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Envío gratuito en pedidos superiores a 100&nbsp;€
+          </p>
+        </section>
+      </div>
+
+      <!-- Descripción detallada -->
+      <section aria-labelledby="descripcion-titulo" class="mt-12 md:mt-16 border-t border-khaki pt-10">
+        <h2 id="descripcion-titulo" class="text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wide text-primary mb-6">Descripción del producto</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+          <article>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Materiales</h3>
+            <p class="text-slate leading-relaxed" itemprop="material">
+              Confeccionada en mezcla premium de <strong>algodón orgánico (70&nbsp;%)</strong> y
+              <strong>lino francés (30&nbsp;%)</strong>, cultivado en la región de Normandía.
+              Los botones son de nácar natural y las costuras reforzadas a mano en nuestro atelier de Lyon.
+              Certificación OEKO-TEX® Standard 100.
+            </p>
+          </article>
+
+          <article>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-muted mb-3">Uso recomendado</h3>
+            <p class="text-slate leading-relaxed" itemprop="description">
+              Diseñada para un estilo de vida sofisticado y versátil. Perfecta para reuniones de trabajo,
+              brunch dominical o una cena informal en la terraza. Su tejido transpirable la convierte en la
+              prenda ideal para primavera y verano. Combínala con pantalones de lino o un blazer ligero
+              para un look parisino impecable.
+            </p>
+          </article>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER (reutilizable en todas las vistas) -->
+  <footer class="site-footer mt-auto" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Marca -->
+        <div>
+          <p class="text-lg font-bold uppercase tracking-widest text-white mb-1">BARARAZA</p>
+          <p class="text-xs uppercase tracking-[0.2em] text-khaki mb-3">Clothing Co.</p>
+          <p class="text-sm text-khaki leading-relaxed">
+            Moda atemporal con raíces francesas. Diseñamos prendas que trascienden las temporadas.
+          </p>
+        </div>
+
+        <!-- Categorías -->
+        <nav aria-label="Categorías">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Categorías</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="catalogo.html?categoria=calzado">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legal -->
+        <nav aria-label="Información legal">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Legal</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contacto -->
+        <address class="not-italic">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Contacto</h2>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="mailto:contacto@bararaza.fr">contacto@bararaza.fr</a>
+            </li>
+            <li>
+              <a href="tel:+33145678900">+33 1 45 67 89 00</a>
+            </li>
+            <li class="text-khaki">12 Rue du Faubourg, 75008 París</li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="border-t border-slate mt-10 pt-6 text-center text-xs text-muted">
+        <p>&copy; 2024 BARARAZA CLOTHING CO. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/producto.js" defer></script>
+</body>
+</html>
