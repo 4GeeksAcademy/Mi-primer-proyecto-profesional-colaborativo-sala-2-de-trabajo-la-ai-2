@@ -15,7 +15,12 @@
       content="Tienda online de moda premium con nuevos lanzamientos y colecciones destacadas."
     />
     <meta property="og:type" content="website" />
-    <link rel="preload" href="./images/logo_Bararaza-header.png" as="image" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index-home.tailwind.generated.css?v=20260619" />
     <link rel="stylesheet" href="./styles-home.css?v=20260619" />
     <script type="application/ld+json">
@@ -30,11 +35,11 @@
     </script>
   </head>
   <body class="site-bg text-[var(--c-ink)] antialiased">
-    <header class="sticky top-0 z-50 border-b border-[var(--c-edge)] bg-[color:var(--c-night)]/95 backdrop-blur">
+    <header class="site-header-shell">
       <nav class="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegacion principal">
         <a href="index-home.html" class="shrink-0" aria-label="Ir al inicio">
           <img
-            src="images/logo_Bararaza-header.png"
+            src="images/logo_Bararaza.png"
             alt="Logo Bararaza Clothing Co."
             width="176"
             height="96"
